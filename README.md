@@ -1,6 +1,6 @@
 # word-map
 
-Fast way to convert fixed length text.
+Convert short text triggers into Greek letters and symbols.
 
 Type a short trigger such as `a` or `sqrt`, press the convert key, and it is replaced in place by its mapped character such as `α` or `√`. Consider using [ahk-greek-keymap](https://github.com/asiloisad/ahk-greek-keymap) instead, which has the same goal but works system wide.
 
