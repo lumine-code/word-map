@@ -2,38 +2,34 @@
 
 Fast way to convert fixed length text.
 
-![AutoConvert](https://github.com/asiloisad/pulsar-word-map/blob/master/assets/ppt-1.gif?raw=true)
-
-![SelectionConvert](https://github.com/asiloisad/pulsar-word-map/blob/master/assets/ppt-2.gif?raw=true)
-
-Consider to use [ahk-greek-keymap](https://github.com/asiloisad/ahk-greek-keymap) instead, which has the same goal but works system wide.
+Type a short trigger such as `a` or `sqrt`, press the convert key, and it is replaced in place by its mapped character such as `α` or `√`. Consider using [ahk-greek-keymap](https://github.com/asiloisad/ahk-greek-keymap) instead, which has the same goal but works system wide.
 
 ## Features
 
-- User can use custom mapping.
-- Built-in mapping can be overwritten.
-- Multi-line selection is not supported.
-- The mutate works independent of snippets and use another convert key.
-- Multi-cursor is supported.
+- **Greek letters**: the built-in mapping converts latin letters to their greek counterparts and back.
+- **Symbols**: multi-character triggers for symbols, e.g. `sqrt` → `√`, `(C)` → `©`, `...` → `…`.
+- **Custom mapping**: user rules extend or overwrite the built-in mapping.
+- **Multi-cursor**: every selection converts independently.
+- **Snippet independent**: the conversion works outside the snippets system with its own convert key.
 
 ## Installation
 
-To install `word-map` search for [word-map](https://web.pulsar-edit.dev/packages/word-map) in the Install pane of the Pulsar settings or run `ppm install word-map`. Alternatively, you can run `ppm install asiloisad/pulsar-word-map` to install a package directly from the GitHub repository.
+To install `word-map` search for _word-map_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/word-map`.
 
 ## Commands
 
-In `atom-text-editor` there are available commands:
+Commands available in `atom-text-editor`:
 
-- `word-map:auto`: if selection is not empty, then selected text go to convert, else then one char is used
-- `word-map:selected`: mutate selected text
-- `word-map:fixed-N`: get `N` letters before cursor and mutate it
+- `word-map:auto`: convert the selected text, or the single character before the cursor when the selection is empty,
+- `word-map:selected`: convert the selected text,
+- `word-map:fixed-1` … `word-map:fixed-5`: convert the `N` characters before the cursor.
 
 ## Examples
 
-- the greek letters `α` can be write by input `a` and press convert key
-- the greek letters `β` can be write by input `b` and press convert key
-- the greek letters `π` can be write by input `p` and press convert key
-- the ascii square root symbol `√` can be write by input `sqrt`, selection it and press convert key
+- the greek letter `α` can be written by typing `a` and pressing the convert key,
+- the greek letter `β` can be written by typing `b` and pressing the convert key,
+- the greek letter `π` can be written by typing `p` and pressing the convert key,
+- the square root symbol `√` can be written by typing `sqrt`, selecting it and pressing the convert key.
 
 ## The built-in mapping
 
@@ -64,7 +60,7 @@ In `atom-text-editor` there are available commands:
     `m    : μ`,      `μ  : m`,
     `Q    : Θ`,      `Θ  : Q`,
     `W    : Ω`,      `Ω  : W`,
-    `E    : Σ`,      `Σ  : E`,
+    `E    : Σ`,
     `Y    : Ψ`,      `Ψ  : Y`,
     `P    : Π`,      `Π  : P`,
     `S    : Σ`,      `Σ  : S`,
@@ -87,6 +83,6 @@ In `atom-text-editor` there are available commands:
     `...  : …`,      `…  : ...`,
     `'    : "`,      `"  : '`,
 
-# Contributing
+## Contributing
 
 Got ideas to make this package better, found a bug, or want to help add new features? Just drop your thoughts on GitHub. Any feedback is welcome!

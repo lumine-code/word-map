@@ -1,7 +1,11 @@
 {
   "name": "word-map",
+  "author": "lumine-code",
   "description": "Fast way to convert fixed length text",
-  "repository": "https://github.com/asiloisad/pulsar-word-map",
+  "repository": "https://github.com/lumine-code/word-map",
+  "bugs": {
+    "url": "https://github.com/lumine-code/word-map/issues"
+  },
   "keywords": [
     "word",
     "map",
@@ -9,12 +13,18 @@
     "letter",
     "snippets"
   ],
-  "version": "1.0.8",
+  "version": "1.0.0",
   "license": "MIT",
   "engines": {
     "atom": ">=1.100.0 <2.0.0"
   },
   "main": "./lib/main",
+  "scripts": {
+    "test": "cd ../lumine && npm run test:only -- ../word-map/spec",
+    "lint": "eslint . --max-warnings 0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check ."
+  },
   "activationCommands": {
     "atom-text-editor": [
       "word-map:auto",
@@ -28,18 +38,24 @@
   },
   "configSchema": {
     "silentQ": {
-      "order": 1,
-      "title": "Silent mode",
-      "description": "Silent the warning messages.",
+      "title": "Silent Mode",
+      "description": "Silence the warning notifications.",
       "type": "boolean",
       "default": false
     },
     "customMAP": {
-      "order": 2,
-      "title": "Custom mapping",
-      "description": "Custom mapping rules. This field should be a valid dictonary mapping without brackets e.g. `s:σ, σ:s`.",
+      "title": "Custom Mapping",
+      "description": "Custom mapping rules. This field should be a valid dictionary mapping without brackets e.g. `s:σ, σ:s`.",
       "type": "string",
       "default": ""
     }
+  },
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.8.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-n": "^18.2.2",
+    "globals": "^17.7.0",
+    "prettier": "^3.9.6"
   }
 }
