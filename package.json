@@ -7,11 +7,12 @@
     "url": "https://github.com/lumine-code/word-map/issues"
   },
   "keywords": [
-    "word",
-    "map",
     "greek",
-    "letter",
-    "snippets"
+    "symbols",
+    "unicode",
+    "substitution",
+    "conversion",
+    "characters"
   ],
   "version": "1.0.0",
   "license": "MIT",
