@@ -19,6 +19,9 @@
   "engines": {
     "atom": ">=1.100.0 <2.0.0"
   },
+  "backgroundTips": [
+    "You can turn a short trigger such as a or sqrt into the character it maps to with {{ 'word-map:auto' | keystroke }}"
+  ],
   "main": "./lib/main",
   "scripts": {
     "test": "lumine --test spec",
