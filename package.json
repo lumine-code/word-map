@@ -23,6 +23,12 @@
     "You can turn a short trigger such as a or sqrt into the character it maps to with {{ 'word-map:auto' | keystroke }}"
   ],
   "main": "./lib/main",
+  "files": [
+    "keymaps",
+    "lib",
+    "menus",
+    "spec"
+  ],
   "scripts": {
     "test": "lumine --test spec",
     "lint": "eslint . --max-warnings 0",
