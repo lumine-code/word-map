@@ -1,5 +1,9 @@
 {
-  "atom-text-editor": {
+  // :not([mini]) because it acts on the file. It also mattered more than most:
+  // core reserves f12 for select-list:actions, but only inside `.select-list`
+  // and `.input-dialog` mini editors, so a bare selector here took f12 in the
+  // find field, the commit box and every other mini editor.
+  "atom-text-editor:not([mini])": {
     "f12": "word-map:auto"
   }
 }
