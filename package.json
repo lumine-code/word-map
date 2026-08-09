@@ -36,7 +36,7 @@
     "format:check": "prettier --check ."
   },
   "activationCommands": {
-    "atom-text-editor": [
+    "lumine-text-editor": [
       "word-map:auto",
       "word-map:selected",
       "word-map:fixed-1",

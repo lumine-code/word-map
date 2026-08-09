@@ -18,7 +18,7 @@ To install `word-map` search for _word-map_ in the Install pane of the Lumine se
 
 ## Commands
 
-Commands available in `atom-workspace`:
+Commands available in `lumine-workspace`:
 
 - `word-map:auto`: convert the selected text, or the single character before the cursor when the selection is empty,
 - `word-map:selected`: convert the selected text,
