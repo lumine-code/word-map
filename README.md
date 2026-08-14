@@ -14,7 +14,7 @@ Type a short trigger such as `a` or `sqrt`, press the convert key, and it is rep
 
 ## Installation
 
-To install `word-map` search for _word-map_ in the Install pane of the Lumine settings or run `lumine --install lumine-code/word-map`.
+To install `word-map` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/word-map`.
 
 ## Commands
 
