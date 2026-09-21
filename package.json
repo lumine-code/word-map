@@ -35,17 +35,6 @@
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
-  "activationCommands": {
-    "lumine-text-editor": [
-      "word-map:auto",
-      "word-map:selected",
-      "word-map:fixed-1",
-      "word-map:fixed-2",
-      "word-map:fixed-3",
-      "word-map:fixed-4",
-      "word-map:fixed-5"
-    ]
-  },
   "configSchema": {
     "silentQ": {
       "title": "Silent Mode",
