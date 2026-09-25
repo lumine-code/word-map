@@ -19,9 +19,6 @@
   "engines": {
     "lumine": "^1.0.0"
   },
-  "backgroundTips": [
-    "You can turn a short trigger such as a or sqrt into the character it maps to with {{ 'word-map:auto' | keystroke }}"
-  ],
   "main": "./lib/main",
   "files": [
     "keymaps",
@@ -47,6 +44,13 @@
       "description": "Custom mapping rules. This field should be a valid dictionary mapping without brackets e.g. `s:σ, σ:s`.",
       "type": "string",
       "default": ""
+    }
+  },
+  "providedServices": {
+    "background-tips.provider": {
+      "versions": {
+        "1.0.0": "provideBackgroundTips"
+      }
     }
   },
   "devDependencies": {
