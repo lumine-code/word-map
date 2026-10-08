@@ -84,6 +84,42 @@ describe("word-map", () => {
   });
 
   describe("custom mapping", () => {
+    it("preserves every colon after the mapping delimiter", () => {
+      lumine.config.set("word-map.customMAP", "clock:12:00, uri:https://example.test:8443/a");
+      expect(mainModule.customMAP).toEqual({ clock: "12:00", uri: "https://example.test:8443/a" });
+
+      editor.setText("clock");
+      editor.selectAll();
+      lumine.commands.dispatch(editorElement, "word-map:selected");
+      expect(editor.getText()).toBe("12:00");
+    });
+
+    it("keeps trimming, empty values, duplicate overrides and malformed-entry handling", () => {
+      lumine.config.set(
+        "word-map.customMAP",
+        " ignored, ,  a : first , a: last , remove: , : empty ",
+      );
+      expect(mainModule.customMAP).toEqual({ a: "last", remove: "", "": "empty" });
+
+      editor.setText("remove");
+      editor.selectAll();
+      lumine.commands.dispatch(editorElement, "word-map:selected");
+      expect(editor.getText()).toBe("");
+    });
+
+    it("treats prototype property names as literal triggers", () => {
+      lumine.config.set("word-map.customMAP", "__proto__:mapped, constructor:ctor, toString:text");
+      expect(Object.getPrototypeOf(mainModule.customMAP)).toBe(Object.prototype);
+      expect(Object.hasOwn(mainModule.customMAP, "__proto__")).toBe(true);
+      expect(mainModule.customMAP.constructor).toBe("ctor");
+      expect(mainModule.customMAP.toString).toBe("text");
+
+      editor.setText("__proto__");
+      editor.selectAll();
+      lumine.commands.dispatch(editorElement, "word-map:selected");
+      expect(editor.getText()).toBe("mapped");
+    });
+
     it("extends and overrides the built-in mapping", () => {
       lumine.config.set("word-map.customMAP", "zz:ω, a:@");
       expect(mainModule.customMAP).toEqual({ zz: "ω", a: "@" });
