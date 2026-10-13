@@ -4,8 +4,15 @@
       "label": "Edit",
       "submenu": [
         {
-          "label": "Map Word or Selection",
-          "command": "word-map:auto"
+          "label": "Text",
+          "submenu": [
+            {
+              "label": "Map Word or Selection",
+              "command": "word-map:auto",
+              "group": "transform",
+              "order": 40
+            }
+          ]
         }
       ]
     },
