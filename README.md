@@ -12,6 +12,10 @@ Type a short trigger such as `a` or `sqrt`, press the convert key, and it is rep
 - **Multi-cursor**: every selection converts independently.
 - **Snippet independent**: the conversion works outside the snippets system with its own convert key.
 
+![Text triggers selected at multiple cursors.](.github/demo.png)
+
+![Mapped Greek letters and mathematical symbols.](.github/demo-2.png)
+
 ## Installation
 
 To install `word-map` search for it in the Install pane of the Lumine settings, or run the command `lumine --install lumine-code/word-map`.

@@ -1,0 +1,22 @@
+{
+  "title": "word-map",
+  "description": "Convert selected text triggers into Greek letters and symbols.",
+  "recordedOn": "2026-10-13",
+  "sourceRevision": "4f4ccccfe396a31730df1e3d24dd06d45c37cd6f",
+  "mode": "normal",
+  "fontSettings": "default",
+  "images": [
+    {
+      "file": "demo.png",
+      "label": "Text triggers selected at multiple cursors.",
+      "width": 1100,
+      "height": 340
+    },
+    {
+      "file": "demo-2.png",
+      "label": "Mapped Greek letters and mathematical symbols.",
+      "width": 1100,
+      "height": 340
+    }
+  ]
+}
