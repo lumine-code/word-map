@@ -2,7 +2,7 @@ const path = require("node:path");
 const packageRoot = path.join(__dirname, "..");
 
 describe("word-map menu commands in captured presentation contexts", () => {
-  let main, first, second, firstPane, notebook;
+  let first, second, firstPane, notebook;
 
   beforeEach(async () => {
     jasmine.useRealClock();
@@ -14,7 +14,7 @@ describe("word-map menu commands in captured presentation contexts", () => {
     first = await lumine.workspace.open();
     firstPane = lumine.workspace.paneForItem(first);
     second = lumine.workspace.buildTextEditor();
-    main = (await lumine.packages.activatePackage(packageRoot)).mainModule;
+    await lumine.packages.activatePackage(packageRoot);
     first.setText("main");
     second.setText("sqrt");
     second.selectAll();
@@ -26,7 +26,7 @@ describe("word-map menu commands in captured presentation contexts", () => {
     if (notebook) await lumine.workspace.paneForItem(notebook)?.destroyItem(notebook);
     first?.destroy();
     second?.destroy();
-    main = first = second = firstPane = notebook = null;
+    first = second = firstPane = notebook = null;
   });
 
   it("keeps the invoking window document when the global active editor is elsewhere", async () => {
