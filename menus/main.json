@@ -1,6 +1,15 @@
 {
   "menu": [
     {
+      "label": "Edit",
+      "submenu": [
+        {
+          "label": "Map Word or Selection",
+          "command": "word-map:auto"
+        }
+      ]
+    },
+    {
       "label": "Packages",
       "submenu": [
         {
