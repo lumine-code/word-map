@@ -7,7 +7,7 @@
           "label": "Text",
           "submenu": [
             {
-              "label": "Map Word or Selection",
+              "label": "Map Character or Selection",
               "command": "word-map:auto",
               "group": "transform",
               "order": 40
@@ -22,14 +22,18 @@
         {
           "label": "Word Map",
           "submenu": [
-            { "label": "Auto", "command": "word-map:auto" },
-            { "label": "Selected", "command": "word-map:selected" },
-            { "type": "separator" },
-            { "label": "Fixed 1", "command": "word-map:fixed-1" },
-            { "label": "Fixed 2", "command": "word-map:fixed-2" },
-            { "label": "Fixed 3", "command": "word-map:fixed-3" },
-            { "label": "Fixed 4", "command": "word-map:fixed-4" },
-            { "label": "Fixed 5", "command": "word-map:fixed-5" }
+            { "label": "Map Character or Selection", "command": "word-map:auto" },
+            { "label": "Map Selection", "command": "word-map:selected" },
+            {
+              "label": "Map Characters Before Cursor",
+              "submenu": [
+                { "label": "1 Character", "command": "word-map:fixed-1" },
+                { "label": "2 Characters", "command": "word-map:fixed-2" },
+                { "label": "3 Characters", "command": "word-map:fixed-3" },
+                { "label": "4 Characters", "command": "word-map:fixed-4" },
+                { "label": "5 Characters", "command": "word-map:fixed-5" }
+              ]
+            }
           ]
         }
       ]
