@@ -1,22 +1,68 @@
 {
   "title": "word-map",
-  "description": "Convert selected text triggers into Greek letters and symbols.",
-  "recordedOn": "2026-10-13",
-  "sourceRevision": "4f4ccccfe396a31730df1e3d24dd06d45c37cd6f",
+  "description": "Text triggers selected at multiple cursors.",
+  "recordedOn": "2026-10-14",
+  "sourceRevision": "5a402735731e540c14504bf8f2fb73c195f5bb0d",
+  "themeSourceRevision": "7fbd047a87ecf1367c896b19ff270cdc28d319f7",
   "mode": "normal",
   "fontSettings": "default",
+  "scenario": "demo.js",
+  "recipeHash": "6088a7753ea83cc0ec33483bda04d43cb594699f2ef22eff1412730223f063f3",
+  "environment": {
+    "platform": "win32",
+    "arch": "x64",
+    "electron": "44.7.0",
+    "chrome": "152.0.7977.130",
+    "devicePixelRatio": 1,
+    "locale": "en-GB",
+    "fontFamily": "Fira Code, Menlo, DejaVu Sans Mono, Consolas, monospace",
+    "fontSize": 14,
+    "themes": ["one-day-syntax", "one-day-ui"]
+  },
+  "viewport": { "width": 1100, "height": 340 },
+  "cornerRadius": 10,
+  "sources": {
+    "editor": {
+      "revision": "8be8f86075ad93df038610d82b3ac6d99329957d",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "package": {
+      "revision": "5a402735731e540c14504bf8f2fb73c195f5bb0d",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "word-map": {
+      "revision": "5a402735731e540c14504bf8f2fb73c195f5bb0d",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    "one-theme": {
+      "revision": "7fbd047a87ecf1367c896b19ff270cdc28d319f7",
+      "dirty": false,
+      "workingTreeHash": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  },
+  "fixtures": [
+    {
+      "file": "usage/symbols.txt",
+      "sha256": "bda8dff485d52f55d2e33ae24211b2ff7aa4a36258b1b0199aa5c945832c8739"
+    }
+  ],
   "images": [
     {
       "file": "demo.png",
       "label": "Text triggers selected at multiple cursors.",
       "width": 1100,
-      "height": 340
+      "height": 340,
+      "sha256": "ad6f3a37343025e3f8263829841e6c511d10194678b348587ea07308d76f0690"
     },
     {
       "file": "demo-2.png",
       "label": "Mapped Greek letters and mathematical symbols.",
       "width": 1100,
-      "height": 340
+      "height": 340,
+      "sha256": "b00d3c985a62a17ab166aa5025e49f14a36debf0ac20c832440a0263893e9cee"
     }
   ]
 }
