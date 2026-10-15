@@ -1,7 +1,7 @@
 {
   // :not([mini]) because it acts on the file. A bare selector here would take
-  // f12 in the find field, the commit box and every other mini editor.
+  // the chord in the find field, the commit box and every other mini editor.
   "lumine-text-editor:not([mini])": {
-    "f12": "word-map:auto"
+    "cmdorctrl-k w": "word-map:auto"
   }
 }
