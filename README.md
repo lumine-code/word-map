@@ -22,7 +22,7 @@ To install `word-map` search for it in the Install pane of the Lumine settings, 
 
 ## Commands
 
-Commands available in `lumine-workspace`:
+Commands available in `lumine-text-editor:not([mini]):not([readonly])`:
 
 - `word-map:auto`: convert the selected text, or the single character before the cursor when the selection is empty,
 - `word-map:selected`: convert the selected text,

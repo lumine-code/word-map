@@ -29,7 +29,7 @@ describe("word-map menu commands in captured presentation contexts", () => {
     first = second = firstPane = notebook = null;
   });
 
-  it("keeps the invoking window document when the global active editor is elsewhere", async () => {
+  it("does not forward an auxiliary window button into its active document", async () => {
     const extra = await lumine.workspace.openEditorWindow({ show: false });
     extra.getEditorContainer().getActivePane().activateItem(second, { activatePane: true });
     firstPane.activate();
@@ -40,11 +40,14 @@ describe("word-map menu commands in captured presentation contexts", () => {
 
     await lumine.commands.dispatch(button, "word-map:auto");
 
+    expect(lumine.commands.canDispatch(button, "word-map:auto")).toBe(false);
+    expect(second.getText()).toBe("sqrt");
+    await lumine.commands.dispatch(second.getElement(), "word-map:auto");
     expect(second.getText()).toBe("√");
     expect(first.getText()).toBe("main");
   });
 
-  it("uses a captured notebook cell from a non-editor command target", async () => {
+  it("does not forward a notebook button's mapping action into its embedded editor", async () => {
     const element = document.createElement("div");
     const button = document.createElement("button");
     element.appendChild(button);
@@ -64,7 +67,8 @@ describe("word-map menu commands in captured presentation contexts", () => {
 
     await lumine.commands.dispatch(button, "word-map:auto");
 
-    expect(second.getText()).toBe("√");
+    expect(lumine.commands.canDispatch(button, "word-map:auto")).toBe(false);
+    expect(second.getText()).toBe("sqrt");
     expect(first.getText()).toBe("main");
   });
 
