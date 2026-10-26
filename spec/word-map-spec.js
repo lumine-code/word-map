@@ -140,6 +140,30 @@ describe("word-map", () => {
   });
 
   describe("unknown words", () => {
+    it("rejects selections longer than every dictionary key without reading text", () => {
+      editor.setText("x".repeat(10000));
+      editor.selectAll();
+      const read = spyOn(editor.getLastSelection(), "getText").and.throwError(
+        "unbounded dictionary key",
+      );
+      try {
+        expect(() => mainModule.convert({ target: editorElement })).not.toThrow();
+        expect(read).not.toHaveBeenCalled();
+      } finally {
+        read.and.callThrough();
+      }
+      expect(editor.getSelectedBufferRange().end.column).toBe(10000);
+      expect(editor.getText()).toBe("x".repeat(10000));
+    });
+
+    it("retains complete custom keys longer than the built-in dictionary", () => {
+      const key = "x".repeat(10000);
+      lumine.config.set("word-map.customMAP", key + ":mapped");
+      editor.setText(key);
+      editor.selectAll();
+      mainModule.convert({ target: editorElement });
+      expect(editor.getText()).toBe("mapped");
+    });
     it("warns when the word has no mapping", () => {
       lumine.notifications.clear();
       editor.setText("qq");
