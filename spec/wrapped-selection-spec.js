@@ -5,8 +5,7 @@ describe("Word Map logical selected lines", () => {
       spyOn(lumine.shell, method).and.resolveTo();
     spyOn(lumine.application, "openWindow").and.resolveTo();
     await lumine.packages.activatePackage("word-map");
-    lumine.config.set("editor.softWrapAtPreferredLineLength", true);
-    lumine.config.set("editor.preferredLineLength", 4);
+    lumine.config.set("editor.softWrapMaxColumn", 4);
     editor = await lumine.workspace.open();
     element = lumine.views.getView(editor);
     jasmine.attachToDOM(lumine.workspace.getElement());
